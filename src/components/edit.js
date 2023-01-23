@@ -1,6 +1,6 @@
 // NOTE the following code will serve as an editing component for our records. It will use a similar layout to the create component and will eventually submit an update command to our server.
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
 
 export default function Edit() {
@@ -22,7 +22,6 @@ export default function Edit() {
 
 			if (!response.ok) {
 				const message = `An error has occurred: ${response.statusText}`;
-
 				window.alert(message);
 				return;
 			}
@@ -51,7 +50,7 @@ export default function Edit() {
 	}
 
 	async function onSubmit(e) {
-		e.preventDefalult();
+		e.preventDefault();
 
 		const editedPerson = {
 			name: form.name,

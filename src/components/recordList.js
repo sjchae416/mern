@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Record = (props) => {
+const Record = (props) => (
 	<tr>
 		<td>{props.record.name}</td>
 		<td>{props.record.position}</td>
@@ -12,6 +12,7 @@ const Record = (props) => {
 			<Link className="btn btn-link" to={`edit/${props.record._id}`}>
 				Edit
 			</Link>
+			|
 			<button
 				className="btn btn-link"
 				onClick={() => {
@@ -21,8 +22,8 @@ const Record = (props) => {
 				Delete
 			</button>
 		</td>
-	</tr>;
-};
+	</tr>
+);
 
 export default function RecordList() {
 	const [records, setRecords] = useState([]);
@@ -34,7 +35,6 @@ export default function RecordList() {
 
 			if (!response.ok) {
 				const message = `An error occurred: ${response.statusText}`;
-
 				window.alert(message);
 				return;
 			}
