@@ -79,14 +79,14 @@ export default function RecordList() {
 			<h3>Record List</h3>
 
 			<table className="table table-striped" style={{ marginTop: 20 }}>
-				<thread>
+				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Position</th>
 						<th>Level</th>
 						<th>Action</th>
 					</tr>
-				</thread>
+				</thead>
 				<tbody>{recordList()}</tbody>
 			</table>
 		</div>
